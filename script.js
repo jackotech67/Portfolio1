@@ -17,16 +17,17 @@ document.addEventListener('click', (event) => {
     }
 });
 
-const track = document.getElementById("ethics-carousel-track");
-const slides = document.querySelectorAll(".ethics-carousel-slide");
+// ETHICS CAROUSEL
+const ethicsTrack = document.getElementById("ethics-carousel-track");
+const ethicsSlides = document.querySelectorAll(".ethics-carousel-slide");
 let index = 0;
 
 function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
+  ethicsTrack.style.transform = `translateX(-${index * 100}%)`;
 }
 
 function nextSlide() {
-  index = (index + 1) % slides.length;
+  index = (index + 1) % ethicsSlides.length;
   updateCarousel();
 }
 
@@ -37,3 +38,5 @@ carousel.addEventListener("mouseenter", () => clearInterval(autoSlide));
 carousel.addEventListener("mouseleave", () => {
   autoSlide = setInterval(nextSlide, 4000);
 });
+
+
