@@ -308,6 +308,12 @@ h1, h2, h3 {
   perspective: 1000px;
   background-color: var(--primary-color)
 }
+.skills-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .skills-card-inner {
   width: 100%;
   height: 100%;
@@ -454,7 +460,7 @@ h1, h2, h3 {
       height: auto;
     }
     .ethics-carousel-wrapper {
-      height: 600px;
+      height: 300px;
     }
 
 
