@@ -337,13 +337,23 @@ h1, h2, h3 {
 
   padding: 20px 20px;
 }
-
 .skills-card-back {
   transform: rotateY(180deg);
 }
 .emoji {
   font-size: 3rem;
   margin-top: 10px;
+}
+.skills-card-front img,
+.skills-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.skills-card-front.image-card,
+.skills-card-back.image-card {
+  padding: 0;
 }
 
 /* ========== CONTACTS SECTION ========== */
@@ -441,12 +451,12 @@ h1, h2, h3 {
     }
     .ethics-image-container {
       width: 75%;
-      height: 80%;
-    }
-    .about-wrapper {
       height: auto;
-      padding: 40px 0;
     }
+    .ethics-carousel-wrapper {
+      height: 600px;
+    }
+
 
     /* ========== ACCOLADES SECTION ========== */
 
@@ -454,7 +464,6 @@ h1, h2, h3 {
       height: auto;
       flex-direction: column;
       gap: 20px;
-      padding-top: 60px;
       padding-bottom: 60px;
     }
     .accolades-box {
@@ -487,10 +496,17 @@ h1, h2, h3 {
       display: none;
     }
 
-    /* ========== ABOUT SECTION ========== */
+    /* ========== SKILLS SECTION ========== */
 
-    .about-box {
-      width: 80%;
+    .skills-wrapper {
+      height: auto;
+      padding: 40px 0;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      height: auto;
     }
 
     /* ========== CONTACTS SECTION ========== */
