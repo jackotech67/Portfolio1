@@ -190,8 +190,8 @@ h1, h2, h3 {
 }
 .ethics-carousel-slide img{
   width: 100%;
-  max-width: 100%;   /* tweak this */
-  max-height: 100%;    /* tweak this */
+  max-width: 120%;   /* tweak this */
+  max-height: 120%;    /* tweak this */
   height: auto;
   object-fit: cover;  
   display: block;
