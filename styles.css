@@ -16,14 +16,6 @@ body {
 h1, h2, h3 {
   font-family: var(--font-heading);
 }
-.projects-container, /* hides text overflow when shrinking the page */
-.accolades-box,
-.ethics-text-container,
-.about-box {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
 
 /* ========== NAVIGATION BAR ========== */
 
@@ -72,12 +64,45 @@ h1, h2, h3 {
   font-size: 28px;
 }
 
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }    
+    .navbar-toggle {
+        display: block;
+        color: var(--primary-color);
+        font-size: 50px;
+    }
+    .navbar.show-menu .navbar-right {
+        display: flex;
+    }
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .navbar-right{
+        margin-top: 10px;
+    }
+    .navbar-right .right-button,
+    .navbar-right .resume-button {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 5px auto;
+    }
+    .resume-button {
+        text-decoration: none;
+    }
+}
+
 /* ---------- HOME PAGE ----------- */
 /* ========== WELCOME SECTION ========== */
 
 .welcome-wrapper {
-  width: 100%; /* 100% of body: full width */
-  height: 120dvh; /* 80% of visible screen height */
+  width: 100%; 
+  height: 120dvh; 
   position: relative;
   display: flex;
   flex-direction: column;
@@ -113,6 +138,13 @@ h1, h2, h3 {
   border-radius: 50%;
   
   object-fit: cover;
+}
+
+/* @media phone width */
+@media (max-width: 768px) {
+  .welcome-wrapper {
+    height: 100dvh;;
+  }
 }
 
 /* ========== ETHICS SECTION ========== */
@@ -151,7 +183,7 @@ h1, h2, h3 {
   padding-right: 5%;
   background-color: var(--tertiary-color);
   border: 2px solid black;
-  overflow: hidden;
+  overflow-wrap: break-word;
 }
 .ethics-box h2 {
   font-size: 2.4rem;
@@ -185,15 +217,13 @@ h1, h2, h3 {
   padding: 6%;
   box-sizing: border-box;
 }
-.ethics-carousel-slide:hover{
-  transform: scale(1.05);
+.ethics-carousel-slide img:hover{
+  transform: scale(1.10);
 }
 .ethics-carousel-slide img{
-  width: 100%;
-  max-width: 120%;   /* tweak this */
-  max-height: 120%;    /* tweak this */
-  height: auto;
-  object-fit: cover;  
+  width: auto;
+  height: 400px;
+  object-fit: contain;  
   display: block;
   border: 2px solid black;
 }
@@ -202,17 +232,82 @@ h1, h2, h3 {
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
+/* @media tablet width */
+@media (max-width: 1024px) {
+    .ethics-wrapper {
+      height: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .ethics-box {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      padding-top: 20px;
+      gap: 30px;
+    }
+    .ethics-text-container {
+      height: auto;
+      width: 80%;
+      padding: 40px 40px;
+      padding-top: 20px;
+      overflow-wrap: break-word;
+    }
+    .ethics-image-container {
+      width: 100%;
+    }
+}
+
+/* @media phone width */
+@media (max-width: 768px) {
+    .ethics-wrapper {
+      height: auto;
+      padding-bottom: 80px;
+    }
+    .ethics-box {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      padding-top: 20px;
+      gap: 30px;
+    }
+    .ethics-text-container {
+      height: auto;
+      width: 90%;
+      padding: 40px 30px;
+      padding-top: 20px;
+      overflow-wrap: break-word;
+    }
+    .ethics-image-container {
+      width: 100%;
+    }
+    .ethics-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .ethics-box h3 {
+      font-size: 1.4rem;
+      margin: 0.8rem 0;
+    }
+    .ethics-box p {
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+    .ethics-carousel-wrapper {
+      height: 80%; /* carousel control here */
+      height: 400px;
+    }
+}
+
 /* ========== ACCOLADES SECTION ========== */
 
-:root {
-  --accolades-img-width: 225px;
-  --accolades-img-height: 225px;
-}
 .accolades-wrapper h4 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .accolades-wrapper p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: -10px;
 }
 .accolades-wrapper {
@@ -225,8 +320,8 @@ h1, h2, h3 {
   text-align: center;
 }
 .accolades-box {
-  width: var(--accolades-img-width);
-  height: var(--accolades-img-height);
+  width: 250px;
+  height: 250px;
   background-color: var(--tertiary-color);
   padding: 10px 25px;
   border: 2px solid black;
@@ -234,6 +329,37 @@ h1, h2, h3 {
 }
 .accolades-box:hover {
   transform: scale(1.05);
+}
+
+/*@media tablet width */
+@media (max-width: 1024px) {
+    .accolades-wrapper {
+      height: auto;
+      padding-bottom: 80px;
+    }
+}
+
+/* @media phone width */
+@media (max-width: 768px) {
+    .accolades-wrapper {
+      height: auto;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 10px;
+      padding-bottom: 60px;
+    }
+    .accolades-box {
+      width: 225px;
+      height: 225px;
+      overflow-wrap: break-word;
+    }
+    .accolades-box h4 {
+      font-size: 1.2rem;
+    }
+    .accolades-box p {
+      font-size: 1rem;
+
+    }
 }
 
 /* ========== PROJECTS SECTION ========== */
@@ -280,6 +406,41 @@ h1, h2, h3 {
 }
 .see-more-button:hover {
   opacity: 0.7;
+}
+
+/* @media tablet width */
+@media (max-width: 1024px) {
+  .projects-wrapper {
+    height: auto;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+/* @media phone width */
+@media (max-width: 768px) {
+    .projects-wrapper {
+      height: auto;
+      padding-bottom: 5%;
+      flex-direction: column;
+    }
+    .projects-box {
+      flex-direction: column;
+      gap: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .projects-container {
+      perspective: none;
+      -webkit-perspective: none;
+    }
+    .projects-card-inner {
+      transform: none !important;
+      -webkit-transform: none !important;
+    }
+    .projects-card-back {
+      display: none;
+    }
 }
 
 /* ========== SKILLS SECTION ========== */
@@ -362,6 +523,29 @@ h1, h2, h3 {
   padding: 0;
 }
 
+/* @media tablet width */
+@media (max-width: 1024px) {
+    .skills-wrapper {
+      height: auto;
+      padding: 20px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+}
+
+/* @media phone width */
+@media (max-width: 768px) {
+    .skills-wrapper {
+      height: auto;
+      padding: 40px 0;
+    }
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      height: auto;
+    }
+}
+
 /* ========== CONTACTS SECTION ========== */
 
 .contact-wrapper { /* check this later - flex may be obselete */
@@ -382,143 +566,18 @@ h1, h2, h3 {
   background-color: var(--tertiary-color);
 }
 
-/* ==========  @MEDIA CHANGES ========== */ 
-
-@media (max-width: 768px) { /* changed from 768px */
-    /* iphone 16 viewport 393 x 852 */
-    /* android ~ 412 x 732 */
-
-    /* ---------- NAVBAR ----------- */
-
-    .navbar-right {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }    
-    .navbar-toggle {
-        display: block;
-        color: var(--primary-color);
-        font-size: 50px;
-    }
-    .navbar.show-menu .navbar-right {
-        display: flex;
-    }
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-    }
-    .navbar-right{
-        margin-top: 10px;
-    }
-    .navbar-right .right-button,
-    .navbar-right .resume-button {
-        padding: 8px 12px;
-        font-size: 14px;
-        margin: 5px auto;
-    }
-    .resume-button {
-        text-decoration: none;
-    }
-
-    /* ---------- HOME PAGE ----------- */
-
-    /* ========== ETHICS SECTION ========== */
-
-    .ethics-wrapper {
+/* @media tablet width */
+@media (max-width: 1024px) {
+    .contact-wrapper {
       height: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
-    .ethics-box {
-      flex-direction: column-reverse;
-      align-items: center;
-      justify-content: center;
-      height: auto;
-      padding-top: 20px;
-      gap: 30px;
-    }
-    .ethics-text-container {
-      height: auto;
-      width: 90%;
-      padding: 40px 30px;
-      padding-top: 20px;
-    }
-    .ethics-image-container {
-      height: auto;
-      width: 100%;
-    }
-    .ethics-box h2 {
-      font-size: 2rem;
-    }
-    .ethics-box h3 {
-      font-size: 1.4rem;
-    }
-    .ethics-box p {
-      font-size: 1rem;
-    }
-    .ethics-image-container {
-      width: 75%;
-      height: auto;
-    }
-    .ethics-carousel-wrapper {
-      height: 300px;
-    }
+}
 
-
-    /* ========== ACCOLADES SECTION ========== */
-
-    .accolades-wrapper {
-      height: auto;
-      flex-direction: column;
-      gap: 20px;
-      padding-bottom: 60px;
-    }
-    .accolades-box {
-      width: 200px;
-      height: 200px;
-    }
-
-    /* ========== PROJECTS SECTION ========== */
-
-    .projects-wrapper {
-      height: auto;
-      padding-bottom: 5%;
-      flex-direction: column;
-    }
-    .projects-box {
-      flex-direction: column;
-      gap: 40px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    .projects-container {
-      perspective: none;
-      -webkit-perspective: none;
-    }
-    .projects-card-inner {
-      transform: none !important;
-      -webkit-transform: none !important;
-    }
-    .projects-card-back {
-      display: none;
-    }
-
-    /* ========== SKILLS SECTION ========== */
-
-    .skills-wrapper {
-      height: auto;
-      padding: 40px 0;
-    }
-
-    .skills-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      height: auto;
-    }
-
-    /* ========== CONTACTS SECTION ========== */
-
+/* @media phone width */
+@media (max-width: 768px) {
     .contact-box {
       padding: 20px 25px;
     }
-    
 }
