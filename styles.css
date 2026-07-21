@@ -64,6 +64,7 @@ h1, h2, h3 {
   font-size: 28px;
 }
 
+/* @media mobile width */
 @media (max-width: 768px) {
     .navbar-right {
         display: none;
@@ -235,7 +236,7 @@ h1, h2, h3 {
 }
 
 /* @media tablet width */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .ethics-wrapper {
       height: auto;
       padding-top: 40px;
@@ -355,7 +356,7 @@ h1, h2, h3 {
 }
 
 /*@media tablet width */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .accolades-wrapper {
       height: auto;
       padding-bottom: 80px;
@@ -432,7 +433,7 @@ h1, h2, h3 {
 }
 
 /* @media tablet width */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .projects-wrapper {
     height: auto;
     padding: 20px;
@@ -547,7 +548,7 @@ h1, h2, h3 {
 }
 
 /* @media tablet width */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .skills-wrapper {
       height: auto;
       padding: 20px;
@@ -605,7 +606,7 @@ h1, h2, h3 {
 }
 
 /* @media tablet width */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .contact-wrapper {
       height: auto;
       padding-top: 40px;
