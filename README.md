@@ -17,3 +17,7 @@
 - JavaScript
 - Git & GitHub
 - GitHub Pages
+
+## Acknowledgements
+
+Development support provided by [OpenAI ChatGPT](https://chatgpt.com/) — used throughout development for learning, debugging, and technical guidance.
