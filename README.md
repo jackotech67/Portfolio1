@@ -9,3 +9,11 @@
 - Responsive CSS Grid and Flexbox layouts
 - CSS variables for consistent colours and typography
 - Custom domain and HTTPS deployment through GitHub Pages
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Git & GitHub
+- GitHub Pages
